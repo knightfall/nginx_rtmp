@@ -1,6 +1,6 @@
 #!/bin/bash
-apt update && apt upgrade
-apt install build-essential libpcre3 libpcre3-dev libssl-dev
+apt update && apt upgrade -y
+apt install build-essential libpcre3 libpcre3-dev libssl-dev zlib1g zlib1g-dev -y
 cd /root
 mkdir nginx && cd nginx
 wget http://nginx.org/download/nginx-1.18.0.tar.gz
@@ -47,7 +47,7 @@ make install
 mkdir /usr/lib/nginx
 cd ..
 wget https://raw.githubusercontent.com/knightfall/nginx_rtmp/master/nginx -O /etc/init.d/nginx
-wget https://raw.githubusercontent.com/knightfall/nginx_rtmp/master/conf/nginx.conf - ) /etc/nginx/nginx.conf
+wget https://raw.githubusercontent.com/knightfall/nginx_rtmp/master/conf/nginx.conf -O /etc/nginx/nginx.conf
 chmod +x /etc/init.d/nginx
 update-rc.d -f nginx defaults
 systemct start nginx
