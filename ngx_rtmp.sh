@@ -48,6 +48,7 @@ mkdir /usr/lib/nginx
 cd ..
 wget https://raw.githubusercontent.com/knightfall/nginx_rtmp/master/nginx -O /etc/init.d/nginx
 wget https://raw.githubusercontent.com/knightfall/nginx_rtmp/master/conf/nginx.conf - ) /etc/nginx/nginx.conf
+chmod +x /etc/init.d/nginx
 update-rc.d -f nginx defaults
 systemct start nginx
 
